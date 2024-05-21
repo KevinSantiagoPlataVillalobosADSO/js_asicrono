@@ -1,0 +1,1 @@
+alert("Respuesta: a) Despues del bucle \n esto se debe a que js es un lengaje de un solo hilo por lo que el timeout se va a la fila de tareas para ejecutarse luego del ciclo.\n el alert va a mostrar un icremento de uno en uno de una variable asignada como i c:")

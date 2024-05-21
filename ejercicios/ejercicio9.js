@@ -6,17 +6,12 @@
 // callback de true, no los agrega, cuando el callback da false por primera vez agrega
 // todos los elementos restantes a partir de dicho elemento inclusive)
 
-// Requiring the lodash library 
-const _ = require("lodash"); 
+const _ = require("underscore-contrib"); 
+let lista = [1, 234, 34, 46, 7, 89, -32];
 
-// Original array 
-let array1 = [1, 3, 4, 5, 5, 6]   
-// Using _.dropWhile() method 
-let newArray = _.dropWhile(array1, (e) => { 
-    return e != 5; 
-}); 
-
-// Original Array 
-console.log("original Array: ", array1)   
-// Printing the newArray 
-console.log("new Array: ", newArray) 
+let drop = _.dropWhile(lista, (e) => {
+    return e >= 0;
+});
+// 
+console.log(lista)
+console.log(drop)
