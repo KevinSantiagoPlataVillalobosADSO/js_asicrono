@@ -1,15 +1,19 @@
-// 2. En el siguiente código hay una llamada programada setTimeout, luego se ejecuta un cálculo
-//         pesado que demora más de 100 ms en finalizar.
-//         ¿Cuándo se ejecutará la función programada y por qué se ejecutará?
-//         a) Después del bucle.
-//         b) Antes del bucle.
-//         c) Al comienzo del bucle.
-//         ¿Qué va a mostrar alert()?
+// Crear una función map que acepte un array y un callback y que:
+// • por cada elemento del array ejecute el callback pasándole dicho elemento como
+// argumento
+// • obtenga el resultado
+// • lo pushee a un nuevo array
+// • devuelva el array final con el resultado de cada una de las llamadas al callback.
 
-let i = 0;
-setTimeout(() => alert(i), 100);
-for (let j = 0; j < 100000000; j++) {
-    i++;
+//creamos array
+let nom = ["maria", "jose", "vicente", "casemiro"];
+console.log(nom)
+//creamos funcion callback
+// let mayus = (x) => x.oUpperCase();
+let mayus = function(name){
+    return name.toUpperCase();
 }
 
-alert("Respuesta: a) Despues del bucle \n esto se debe a que js es un lengaje de un solo hilo por lo que el timeout se va a la fila de tareas para ejecutarse luego del ciclo.\n el alert va a mostrar un icremento de uno en uno de una variable asignada como i c:")
+//mapeamos el array usando el callback para cada una de las operaciones
+const nuevo = nom.map(mayus);
+console.log(nuevo)
