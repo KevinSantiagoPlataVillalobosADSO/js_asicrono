@@ -10,7 +10,7 @@
 // • Para todos los atributos no se puede ingresar espacios en blanco tanto al inicio como
 // al final de estos y se debe mostrar el error personalizado por consola
 
-let regex = /^(?:[^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*|"[^\n"]+")@(?:[^<>()[\].,;:\s@"]+\.)+[^<>()[\]\.,;:\s@"]{2,63}$/i
+let regex =  /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/
 const usuario = {
     nombre: "Kevin", //solo alfanumerico
     email: "Ksantiagoplata@gmail.com",
@@ -21,17 +21,21 @@ const usuario = {
     get(target, prop) {
       console.log(`Obteniedo ${prop} `);
       return target[prop];
-    },
+    }, 
     set(target, prop, value) {
-        if (prop === 'nombre' && typeof prop != 'string') {
+        if (prop === 'nombre' && typeof value != 'string') {
           throw new Error('Solo caracteres alfanumericos c:');
         }
-        if (prop === 'edad' && typeof prop != 'number') {
+        if (prop === 'edad' && typeof value != 'number') {
             throw new Error('Solo numeros plis');
         }
-        if (prop === 'email' && regex.test(prop) == true) {
-            throw new Error('Solo numeros plis');
+        if (prop === 'email' && regex.test(value) == true) {
+            throw new Error('correo invalido');
         }
+        if (typeof valor === 'string' && (valor.trim() !== valor)) {
+            console.error('Error: No se permiten espacios en blanco al inicio o al final');
+            return false;
+          }
         target[prop] = value;
         return true;
     },
@@ -40,5 +44,4 @@ const usuario = {
 console.log(proxy.nombre);
 proxy.email = "kevinsplata@gmail.com"; 
 console.log(proxy.email);
-console.log(proxy.edad) 
-proxy.edad = "ks"
+proxy.edad = 12;
