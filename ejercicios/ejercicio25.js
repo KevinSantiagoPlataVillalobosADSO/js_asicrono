@@ -9,3 +9,4 @@
 // fechas
 // • Para todos los atributos no se puede ingresar espacios en blanco tanto al inicio como
 // al final de estos y se debe mostrar el error personalizado por consola
+
