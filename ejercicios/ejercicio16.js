@@ -6,19 +6,24 @@ new Promise(function(resolve, reject){
     setTimeout(() => resolve(0), 1000);
 }).then(function(result){
     return new Promise((resolve, reject) => {
-        console.log("primer promesa con 2");
-        setTimeout(() => resolve(result + 2), 1000);
+        let num1 = 2
+        console.log(`${result} + ${num1}`);
+        setTimeout(() => resolve(result + num1), 1000);
     })
 }).then(function(result){
     return new Promise((resolve, reject) => {
-        console.log("segunda promesa con 7")
-        setTimeout(() => resolve(result + 7), 1000);
+        let num2 = 7
+        console.log(`resultado = ${result}`)
+        console.log(`${result} + ${num2}`);
+        setTimeout(() => resolve(result + num2), 1000);
     })
 }).then(function(result){
     return new Promise((resolve, reject) => {
-        console.log("tercera promesa con 4")
-        setTimeout(() => resolve(result + 4), 1000);
+        let num3 = 4
+        console.log(`resultado = ${result}`)
+        console.log(`${result} + ${num3}`);
+        setTimeout(() => resolve(result + num3), 1000);
     })
 }).then(function(result){
-    console.log(result)
+    console.log(`resultado = ${result}`)
 })

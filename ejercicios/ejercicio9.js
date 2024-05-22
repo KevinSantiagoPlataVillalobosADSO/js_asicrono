@@ -15,3 +15,9 @@ let drop = _.dropWhile(lista, (e) => {
 // 
 console.log(lista)
 console.log(drop)
+
+// (ingresar a la carpeta ejercicio
+//     npm i "underscore-contrib"
+//     cd ejercicios
+//     node ejercicio9.js
+// )

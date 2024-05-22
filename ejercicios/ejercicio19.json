@@ -1,0 +1,7 @@
+[
+    {"marca": "Chevrolet", "modelo": "Camaro", "Motor": "V8-Twin-turbo"},
+    {"marca": "Ford", "modelo": "Mustang", "Motor": "V6-Ecobost"},
+    {"marca": "Cadillac", "modelo": "Scalade", "Motor": "V8-6.4lts"},
+    {"marca": "Lamborghini", "modelo": "Huracan", "Motor": "v10-SuperCharged"},
+    {"marca": "Mazda", "modelo": "Cx-30", "Motor": "7-inline-ecosbost"}
+]

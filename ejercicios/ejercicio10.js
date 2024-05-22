@@ -13,3 +13,9 @@ let take = _.takeWhile(lista, (e) => {
 // 
 console.log(lista)
 console.log(take)
+
+// (ingresar a la carpeta ejercicio
+//     npm i "lodash"
+//     cd ejercicios
+//     node ejercicio10.js
+// )
