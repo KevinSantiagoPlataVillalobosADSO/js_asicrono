@@ -10,7 +10,7 @@
 // • Para todos los atributos no se puede ingresar espacios en blanco tanto al inicio como
 // al final de estos y se debe mostrar el error personalizado por consola
 
-
+let regex = /^(?:[^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*|"[^\n"]+")@(?:[^<>()[\].,;:\s@"]+\.)+[^<>()[\]\.,;:\s@"]{2,63}$/i
 const usuario = {
     nombre: "Kevin", //solo alfanumerico
     email: "Ksantiagoplata@gmail.com",
@@ -27,6 +27,9 @@ const usuario = {
           throw new Error('Solo caracteres alfanumericos c:');
         }
         if (prop === 'edad' && typeof prop != 'number') {
+            throw new Error('Solo numeros plis');
+        }
+        if (prop === 'email' && regex.test(prop) == true) {
             throw new Error('Solo numeros plis');
         }
         target[prop] = value;
