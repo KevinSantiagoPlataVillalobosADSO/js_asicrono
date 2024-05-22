@@ -10,3 +10,32 @@
 // • Para todos los atributos no se puede ingresar espacios en blanco tanto al inicio como
 // al final de estos y se debe mostrar el error personalizado por consola
 
+
+const usuario = {
+    nombre: "Kevin", //solo alfanumerico
+    email: "Ksantiagoplata@gmail.com",
+    edad: 12 //solo numeros
+  };
+  
+  const proxy = new Proxy(usuario, {
+    get(target, prop) {
+      console.log(`Obteniedo ${prop} `);
+      return target[prop];
+    },
+    set(target, prop, value) {
+        if (prop === 'nombre' && typeof prop != 'string') {
+          throw new Error('Solo caracteres alfanumericos c:');
+        }
+        if (prop === 'edad' && typeof prop != 'number') {
+            throw new Error('Solo numeros plis');
+        }
+        target[prop] = value;
+        return true;
+    },
+  });
+
+console.log(proxy.nombre);
+proxy.email = "kevinsplata@gmail.com"; 
+console.log(proxy.email);
+console.log(proxy.edad) 
+proxy.edad = "ks"
